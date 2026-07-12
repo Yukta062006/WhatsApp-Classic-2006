@@ -1,0 +1,451 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Windows XP / IE6 Era Styling ===== */
+
+:root {
+  --xp-blue-dark: #003C8F;
+  --xp-blue-mid: #0058EE;
+  --xp-blue-light: #245EDB;
+  --xp-blue-highlight: #3B82F6;
+  --xp-silver: #ACA899;
+  --xp-silver-light: #D4D0C8;
+  --xp-silver-bg: #ECE9D8;
+  --xp-green: #44AA44;
+  --xp-yellow: #F3C623;
+  --xp-red: #D84B4B;
+  --xp-gray: #808080;
+  --xp-title-start: #0A246A;
+  --xp-title-end: #A6CAF0;
+  --xp-toolbar-bg: #F0F0F0;
+  --xp-ie-toolbar: #ECE9D8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, Verdana, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  background: #3A6EA5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* XP Scrollbar */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+  border: 1px solid #ACA899;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #D4D0C8, #BFBCB3, #D4D0C8);
+  border: 1px solid #ACA899;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, #C0BDB3, #A8A598, #C0BDB3);
+}
+
+::-webkit-scrollbar-button {
+  background: var(--xp-silver-light);
+  border: 1px solid #ACA899;
+  height: 16px;
+  width: 16px;
+}
+
+/* XP Panel */
+.xp-panel {
+  background: white;
+  border: 1px solid var(--xp-silver);
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.xp-panel-title {
+  background: linear-gradient(to bottom, #0058EE, #003C8F);
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.xp-panel-title-inactive {
+  background: linear-gradient(to bottom, #7A96DF, #3D6DCC);
+}
+
+/* XP Button */
+.xp-btn {
+  background: linear-gradient(to bottom, #FFFFFF 0%, #ECE9D8 45%, #D6D0C4 100%);
+  border: 1px solid #ACA899;
+  border-radius: 3px;
+  padding: 3px 12px;
+  font-size: 11px;
+  font-family: Tahoma, Verdana, sans-serif;
+  cursor: pointer;
+  color: #000;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset, 0 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.1s ease;
+}
+
+.xp-btn:hover {
+  background: linear-gradient(to bottom, #FFFFFF 0%, #F5F3EE 45%, #E8E4D8 100%);
+  border-color: #0058EE;
+  box-shadow: 0 0 4px rgba(0,88,238,0.3);
+}
+
+.xp-btn:active {
+  background: linear-gradient(to bottom, #D6D0C4 0%, #ECE9D8 100%);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.xp-btn-primary {
+  background: linear-gradient(to bottom, #3B82F6, #1D4ED8);
+  color: white;
+  border: 1px solid #003C8F;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.xp-btn-primary:hover {
+  background: linear-gradient(to bottom, #60A5FA, #2563EB);
+  border-color: #002A6B;
+  box-shadow: 0 0 6px rgba(59,130,246,0.5);
+}
+
+.xp-btn-primary:active {
+  background: linear-gradient(to bottom, #1D4ED8, #1E40AF);
+}
+
+/* XP Input */
+.xp-input {
+  border: 1px solid #7F9DB9;
+  border-top-color: #566775;
+  background: white;
+  padding: 3px 6px;
+  font-size: 11px;
+  font-family: Tahoma, Verdana, sans-serif;
+  outline: none;
+  border-radius: 0;
+}
+
+.xp-input:focus {
+  border-color: #0058EE;
+  box-shadow: 0 0 3px rgba(0,88,238,0.3);
+}
+
+/* IE6 Chrome */
+.ie-titlebar {
+  background: linear-gradient(to right, #0A246A, #3A6EA5, #A6CAF0);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.ie-menubar {
+  background: var(--xp-ie-toolbar);
+  border-bottom: 1px solid var(--xp-silver);
+  padding: 2px 4px;
+  font-size: 11px;
+  display: flex;
+  gap: 2px;
+}
+
+.ie-menubar span {
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.ie-menubar span:hover {
+  background: #316AC5;
+  color: white;
+}
+
+.ie-toolbar {
+  background: var(--xp-ie-toolbar);
+  border-bottom: 1px solid var(--xp-silver);
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.ie-toolbar-btn {
+  background: none;
+  border: 1px solid transparent;
+  padding: 2px 4px;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.ie-toolbar-btn:hover {
+  border-color: #0058EE;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.8), rgba(200,220,255,0.4));
+}
+
+.ie-addressbar {
+  background: var(--xp-ie-toolbar);
+  border-bottom: 1px solid var(--xp-silver);
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.ie-addressbar input {
+  flex: 1;
+  border: 1px solid #7F9DB9;
+  padding: 2px 4px;
+  font-size: 11px;
+  background: white;
+}
+
+/* Windows XP window buttons */
+.xp-window-btn {
+  width: 21px;
+  height: 21px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.xp-window-btn-close {
+  background: linear-gradient(to bottom, #E5614C, #C1311E);
+  color: white;
+}
+
+.xp-window-btn-close:hover {
+  background: linear-gradient(to bottom, #FF7A68, #E5614C);
+}
+
+.xp-window-btn-max {
+  background: linear-gradient(to bottom, #3B82F6, #1D4ED8);
+  color: white;
+}
+
+.xp-window-btn-min {
+  background: linear-gradient(to bottom, #3B82F6, #1D4ED8);
+  color: white;
+}
+
+/* Message Bubbles */
+.msg-bubble {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  position: relative;
+  word-wrap: break-word;
+}
+
+.msg-bubble-self {
+  background: linear-gradient(to bottom, #DCF8C6, #C5E8A5);
+  border: 1px solid #A8D88A;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.msg-bubble-other {
+  background: linear-gradient(to bottom, #FFFFFF, #F5F5F5);
+  border: 1px solid #E0E0E0;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+/* Status Dots */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+
+.status-online { background: var(--xp-green); }
+.status-away { background: var(--xp-yellow); }
+.status-busy { background: var(--xp-red); }
+.status-offline { background: var(--xp-gray); }
+.status-invisible { background: var(--xp-gray); border: 1px dashed #555; }
+
+/* Glossy Header */
+.app-header {
+  background: linear-gradient(to bottom, #245EDB, #0058EE, #003C8F);
+  border-bottom: 2px solid #002A6B;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+.app-footer {
+  background: linear-gradient(to top, #003C8F, #0058EE, #245EDB);
+  border-top: 2px solid #002A6B;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.2);
+}
+
+/* XP Progress Bar */
+.xp-progress-bar {
+  height: 16px;
+  background: white;
+  border: 1px solid #ACA899;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.xp-progress-fill {
+  height: 100%;
+  background: linear-gradient(to bottom, #56C456, #36A836);
+  background-size: 30px 30px;
+  animation: xp-progress-animate 1.5s linear infinite;
+}
+
+@keyframes xp-progress-animate {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 0; }
+}
+
+/* 3G Loading Animation */
+.loading-3g {
+  animation: loading3g 3s ease-in-out forwards;
+}
+
+@keyframes loading3g {
+  0% { width: 0%; }
+  20% { width: 15%; }
+  40% { width: 30%; }
+  60% { width: 55%; }
+  80% { width: 75%; }
+  100% { width: 100%; }
+}
+
+/* Signal bars animation */
+.signal-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  height: 12px;
+}
+
+.signal-bar {
+  width: 3px;
+  background: #44AA44;
+  border-radius: 1px;
+  animation: signalPulse 2s ease-in-out infinite;
+}
+
+@keyframes signalPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Contact hover */
+.contact-item {
+  transition: background 0.1s ease;
+}
+
+.contact-item:hover {
+  background: #E8F0FE;
+}
+
+.contact-item.active {
+  background: #CCE0FF;
+  border-left: 3px solid #0058EE;
+}
+
+/* Emoji grid */
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 2px;
+  padding: 4px;
+}
+
+.emoji-grid button {
+  font-size: 16px;
+  padding: 4px;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.emoji-grid button:hover {
+  background: #CCE0FF;
+  border-color: #0058EE;
+}
+
+/* Collapsible groups */
+.group-header {
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #003C8F;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid #E8E8E8;
+  background: #F5F5F5;
+}
+
+.group-header:hover {
+  background: #E8F0FE;
+}
+
+/* Auth screen dialog */
+.xp-dialog {
+  background: var(--xp-silver-bg);
+  border: 2px solid var(--xp-silver);
+  border-radius: 6px;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+.xp-dialog-title {
+  background: linear-gradient(to right, #0A246A, #3A6EA5);
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Notification slide up animation */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
